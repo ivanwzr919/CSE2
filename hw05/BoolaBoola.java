@@ -6,45 +6,83 @@
 //CourseNumber Java Program
 //The program that has three boolean variables to each of which the value of true or false is randomly assigned. Then, at random, combine the three variables with random choices of && and || and stores the result. 
 import java.util.Scanner;
-public class BoolaBoola{
-   //main method required for every Java program
-   public static void main(String[] args){
-       int a,b,c,d,e;
-       a=(int)(Math.random()*2);
-       b=(int)(Math.random()*2);
-       c=(int)(Math.random()*2);
-       d=(int)(Math.random()*2);
-       e=(int)(Math.random()*2);
-       if(a==0){ String A="false";
-           if(b==0){ String B="||";
-              if(c==0){ String C="false";
-                 if(d==0){ String D="||";
-                    if(e==0){ String E="false";
-                       System.out.print("Does "+A+" "+B+" "+C+" "+D+" "+E+" have the value true(t/T) or false(f/F)?");
-                    }
-                     else{String E="true";}
-                 }
-                 else{String D="&&";}
-              }
-              else{String C="true";}
-           }
-           else{String B="&&";}
-       }
-       else{String A="true";
-          System.out.print("Does "+A+" "+B+" "+C+" "+D+" "+E+" have the value true(t/T) or false(f/F)?");
-       }
-       Scanner myScanner = new Scanner( System.in );
-       String answer=myScanner.next();
-      if(answer=="t"||answer=="f"){ 
-       if( answer=="t"){int AA=1;}if (a*c*d=AA){System.out.println("correct");}
-        else{System.out.println("Wrong; try again");
-      }
-      if(answer="f"){int AA=0;if (a*c*d=AA){System.out.println("correct");}
-            else{System.out.println("Wrong; try again");
-      }
-       }
-      }
-      else{System.out.println("Wrong; try again");
-      return;}
+
+//define a class
+public class BoolaBoola {
+	// define a method
+	static boolean result;
+
+	public static String randprocess(boolean x) {
+		int temp = (int) (Math.random() * 2);
+		switch (temp) {
+		case 0:
+			result = result || x;
+			return "||";
+			// break;
+		case 1:
+			result = result && x;
+			return "&&";
+			// break;
+		}
+		return "";
+	}
+	
+	public static boolean randomvalue()
+	{
+		int temp = (int) (Math.random() * 2);
+		switch (temp) {
+		case 0:
+			return true;
+			//break;
+		case 1:
+			return false;
+			//break;
+			default:
+				return false;
+		}
+		
+	}
+
+	public static void main(String[] args) {
+		Scanner S;
+		S = new Scanner(System.in);
+		boolean a, b, c;
+		a=randomvalue();
+		b=randomvalue();
+		c=randomvalue();
+		
+		System.out.print("Dose " + a + randprocess(b) + b + randprocess(c) + c
+				+ " have the value true(t/T) or false(f/F)? ");
+		String Ans = S.next();
+		int length = Ans.length();
+		switch (length) {
+		case 1:
+			char A = Ans.charAt(0);
+			switch (A) {
+			case 'T':
+			case 't':
+				if (result == true) {
+					System.out.println("Correct");
+				} else {
+					System.out.println("Wrong! Try again");
+				}
+				break;
+			case 'F':
+			case 'f':
+				if (result == false) {
+
+					System.out.println("Correct");
+				} else {
+					System.out.println("Wrong! Try Again");
+				}
+				break;
+			default:
+				System.out.println("Wrong! Try Again");
+				break;
+
+			}// end
+		}
+	}
 }
-}
+
+
