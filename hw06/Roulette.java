@@ -1,6 +1,6 @@
 /////////////////////////////////////////////
 //Zherui Wang
-//Date: 9/30/14
+//Date: 10/12/14
 //Professor Brian Chen 
 //Class CSE 002-112
 //CourseNumber Java Program
@@ -11,7 +11,7 @@ public class Roulette{
      Scanner myScanner = new Scanner( System.in ); 
      System.out.print("Enter the times that you want to run the simulation- ");
          int Count=myScanner.nextInt();
-         int count=1,totalCount=1,bonus=0,win=0,lose=0;
+         int count=1,totalCount=1,bonus=0,win=0,lose=0,loseAll=0,cashWin=0;
          while(totalCount<=Count){
          while(count<=100){
              int roulette=(int)(Math.random()*38)+1;
@@ -21,12 +21,15 @@ public class Roulette{
          }
          if(count>100){
             int totalBonus=bonus*36;
+            cashWin=cashWin+totalBonus;
             if(totalBonus>100){win=win+1;count=0;bonus=0;}
+            else if(totalBonus==0){loseAll=loseAll+1;count=0;bonus=0;}
             else{lose=lose+1;count=0;bonus=0;}
          }
          totalCount++;}
-         System.out.println("win= "+win+" ,lose= "+lose);
-         if(win>=(Count/2)){System.out.println("You win.");}
+         System.out.println("win= "+win+" ,lose= "+lose+" lose all= "+loseAll);
+         System.out.println("Pay "+Count*100+"$ and get "+cashWin+"$ back.");
+         if(cashWin>=(Count*100)){System.out.println("You win.");}
          else{System.out.println("You lose.");}
      }
 }
