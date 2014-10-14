@@ -15,10 +15,11 @@ public class Root{
          double high=1+x;
          double low=0;
          while((high-low)>(1+x)*0.0000001){
-         if (middle*middle>x){high=middle*middle;
-         middle=(high+low)/2;}
-         else{low=middle*middle;
-         middle=(high+low)/2;}
+         if ((middle*middle)>x){high=middle;
+         }
+         else{low=middle;
+         }
+         middle=(high+low)/2;
          }
          System.out.println("The square root of x is "+((high+low)/2));
      }
