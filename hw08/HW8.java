@@ -23,61 +23,59 @@ public class HW8{
 	System.out.println("You entered '"+input+"'");
   }  
 public static char getInput(Scanner scan, String words){
-     char out='0';
+     char out=' ';
      int s=0;
      while(s==0){
      String input=scan.next();
-     if(input.length()==1){s=1;
+     if(input.length()==1){
          char in=input.charAt(0);
-         int t=0;
          for(int a=0;a<words.length();a++){
              char x=words.charAt(a);
-             if(x==in){out=x;t++;
+             if(x==in){out=x;s=1;
              break;}
         }
-     if(t==0){System.out.print("You did not enter a character from the list '"+words+"' . Try again: ");}
+     if(out==' '){System.out.print("You did not enter a character from the list '"+words+"' . Try again: ");}
      }
      else{System.out.print("You should enter exactly one character :");}
      }
      return out;
 }
 public static char getInput(Scanner scan, String words,int k){
-    char out='0';
-    int s=0;
-     while(s<=k){
+    char out=' ';
+    int s=0,q=0;
+     while(q==0){
      String input=scan.next();
      if(input.length()==1){
          char in=input.charAt(0);
-         int t=0;
          for(int a=0;a<words.length();a++){
              char x=words.charAt(a);
-             if(x==in){out=x;t++;System.out.print("You entered '"+x+"'");
+             if(x==in){out=x;q=1;
              break;}
         }
-     if(t==0){System.out.print("You did not enter a character from the list '"+words+"' . Try again: ");}
+        s++;
+			if(s>k && out==' '){
+				System.out.println("You failed after "+k+" tries.");
+		break;	}
+     if(out==' '){System.out.print("You did not enter a character from the list '"+words+"' . Try again: ");}
      }
      else{System.out.print("You should enter exactly one character :");}
+ 
      }
-     s++;
-			if(s>k && out=='0'){
-				System.out.println("You failed after "+k+" tries.");
-			}
      return out;
-     }
+}
      public static char getInput(Scanner scan, String prompt, String words){
-    char out='0';
+    char out=' ';
      int s=0;
      while(s==0){
      String input=scan.next();
      if(input.length()==1){
          char in=input.charAt(0);
-         int t=0;
          for(int a=0;a<words.length();a++){
              char x=words.charAt(a);
-             if(x==in){out=x;t++;
+             if(x==in){out=x;s=1;
              break;}
         }
-     if(t==0){System.out.print("Enter exactly one character");
+     if(out==' '){System.out.print("Enter exactly one character");
          System.out.println(prompt);
      }
      }
