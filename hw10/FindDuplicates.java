@@ -56,7 +56,7 @@ System.out.print("Go again? Enter 'y' or 'Y', anything else to quit- ");
      int i=0;
      int k=0;
      boolean TF=true;
-     for(i=0;i<num.length/2;i++){
+     for(i=0;i<num.length;i++){
          for(int j=0;j<i;j++){
              if (num[j]==num[i]){
                  k=k+1;
@@ -71,7 +71,7 @@ System.out.print("Go again? Enter 'y' or 'Y', anything else to quit- ");
      int i=0;
      int k=0;
      boolean TF=true;
-     for(i=0;i<num.length/2;i++){
+     for(i=0;i<num.length;i++){
          for(int j=0;j<i;j++){
              if (num[j]==num[i]){
                  k=k+1;
