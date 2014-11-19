@@ -72,6 +72,7 @@ public class PokerOdds{
         for(int X=0;X<10000;X++){
             int p=0;
             int C=0;
+            int NN=0;
              int[] Hand={-1,-1,-1,-1,-1};
        int[] Deck= new int[52];
        for(int i=0;i<52;i++){
@@ -88,16 +89,17 @@ public class PokerOdds{
        for (int k=0;k<5;k++){
            for(int q=0;q<k;q++){
                if( (Hand[q]%13)==(Hand[k]%13)){
-                   int NN=Hand[k]%13;
-                   if(NN>=0&&NN<=12){
-                   Fre[NN]+=1;}
+                   NN=Hand[k]%13;
                    C=C+1;
                }
            }
        }
+                 if(NN>=0&&NN<=12&&C==1){
+                   Fre[NN]+=1;}  
        if(C!=1){S=S+1;}
         }
         String labels[]={"A","K","Q","J","10","9","8","7","6","5","4","3","2"};
+        System.out.println("rank   freq of exactly one pair");
         for(int g=0;g<13;g++){
             System.out.println(labels[g]+":"+Fre[g]);
          }
