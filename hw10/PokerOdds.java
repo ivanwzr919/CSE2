@@ -23,7 +23,7 @@ public class PokerOdds{
        for(int j=0;j<5;j++){
            while (true){
            p=(int)(Math.random()*52);
-           if (p<=52-j){break;}
+           if (p<=51-j){break;}
            }
            Hand[j]=Deck[p];
            Deck[p]=Deck[51-j];
@@ -82,7 +82,7 @@ public class PokerOdds{
        for(int j=0;j<5;j++){
            while (true){
            p=(int)(Math.random()*52);
-           if (p<=52-j){break;}
+           if (p<=51-j){break;}
            }
            Hand[j]=Deck[p];
             Deck[p]=Deck[51-j];
@@ -103,7 +103,7 @@ public class PokerOdds{
         String labels[]={"A","K","Q","J","10","9","8","7","6","5","4","3","2"};
         System.out.println("rank   freq of exactly one pair");
         for(int g=0;g<13;g++){
-            System.out.println(labels[g]+":"+Fre[g]);
+            System.out.println(labels[g]+":        "+Fre[g]);
          }
          System.out.println(" total not exactly one pair: "+S);
     }
