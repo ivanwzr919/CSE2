@@ -26,6 +26,7 @@ public class PokerOdds{
            if (p<=52-j){break;}
            }
            Hand[j]=Deck[p];
+           Deck[p]=Deck[51-j];
            Deck[51-j]=-1;
        }
         String clubs="";
@@ -84,6 +85,7 @@ public class PokerOdds{
            if (p<=52-j){break;}
            }
            Hand[j]=Deck[p];
+            Deck[p]=Deck[51-j];
            Deck[51-j]=-1;
        }
        for (int k=0;k<5;k++){
