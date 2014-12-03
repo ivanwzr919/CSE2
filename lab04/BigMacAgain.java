@@ -26,8 +26,8 @@ public class BigMacAgain{
    else{System.out.println("You did not enter an int>0");
    }
    }
-else{System.out.println("You did not enter an int");
-   return;
+else{System.out.println(You did not enter an int");
+   return;"
    }
    }
 }

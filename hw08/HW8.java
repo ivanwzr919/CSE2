@@ -6,7 +6,6 @@
 //CourseNumber Java Program
 //The program is to write 3 methods.
 import java.util.Scanner;
-import java.util.Scanner;
 public class HW8{
   public static void main(String []arg){
 	char input;
